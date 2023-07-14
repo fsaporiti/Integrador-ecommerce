@@ -15,7 +15,7 @@ router.get("/login", guestMiddleWare, userController.login);
 router.post("/login", userController.loginProcess); //Progresar el login
 
 //CREAR USUARIO
-router.get('/login/register', authMiddleware,userController.register);
+router.get('/login/register', userController.register);
 router.post('/login/register', validations, userController.store);
 
 router.get('/login/register-edit', authMiddleware, userController.edit);
