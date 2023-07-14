@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ("./partials/head")%>
+<body>
+    <%-include ("./partials/header")%>
+
+    <div class="contenedor-total-edit">
+        <div class="col-12">
+            <h2>Estás creando un nuevo producto.<i></i></h2>
+        </div>
+    </div>
+    <div class="contenedor-parcial-edit">
+
+        <form action="/products/probando" method="POST" enctype="multipart/form-data" class="formulario-create">
+
+        
+            <label for="name" class="form-label">Nombre del producto:</label>
+            <input type="text"  name="nombre" placeholder="Ej: Espejo clasico" 
+                   class="boton-login">
+
+            <label for="price" class="form-label">Precio del producto:</label>
+            <input type="text" name="precio" placeholder="Ej: 12000" class="boton-login">
+
+            <label for="discount" class="form-label">Fecha Creacion:</label>
+            <input type="date" name="fecha_creacion" class="boton-login">
+
+            <label for="category" class="form-label">Categoria:</label>
+            <select name="categoria" class="boton-login">
+                <% for(let i = 0; i < categorias.length; i++) { %>
+                    <option value="<%= categorias[i].id %>">
+                        <%= categorias[i].nombre%>
+                    </option>
+                <% } %>
+            </select>
+
+            <label for="description" class="form-label" id="imagen-select">Seleccionar Imagen:</label>
+            <input type="file" name="imagen" class="boton-login-select">
+
+            <button type="submit" class="button-edit">Guardar producto</button>
+
+
+        </form>
+
+    </div>
+
+        <%-include ("./partials/footer")%>
+
+</body>
+</html>

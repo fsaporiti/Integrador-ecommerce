@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ("./partials/head")%>
+<body>
+    <%-include ("./partials/header")%>
+
+<main class="main-login-registrarse">
+
+    <div class="div-formularios-monitor">    
+        <form action="/users/login/register" method="POST" class="formulario-registrarse">
+            <h2>Registrate ahora.</h2>
+            <p>Completa los datos para registrarte</p>
+            
+                <input type="text" name="nombre" class="boton-registrarse nombre is-invalid" value="<%=  locals.oldData ? oldData.nombre : null %>"placeholder="Nombre">
+                    <% if (locals.errors && errors.nombre ) { %>
+                        <div class="text-danger">
+                            <%= errors.nombre.msg  %> 
+                        </div> 
+                    <% } %> 
+                    <div class="errorNombre">
+                        
+                    </div>
+            
+                <input class="boton-registrarse apellido" type="text" placeholder="Apellido" name="apellido"value="<%=  locals.oldData ? oldData.apellido : null %>">
+                    <% if (locals.errors && errors.apellido ) { %>
+                        <div class="text-danger">
+                            <%= errors.apellido.msg  %> 
+                        </div> 
+                    <% } %>     
+                    <div class="errorApellido">
+                        
+                    </div>
+
+                <input class="boton-registrarse email" placeholder="E-mail" name="email"value="<%=  locals.oldData ? oldData.email : null %>">
+                    <% if (locals.errors && errors.email ) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg  %> 
+                        </div> 
+                    <% } %> 
+                    <div class="errorEmail">
+                        
+                    </div>
+
+                <input class="boton-registrarse contraseña" type="password"  placeholder="Contraseña" name="clave">
+                    <% if (locals.errors && errors.clave ) { %>
+                        <div class="text-danger">
+                            <%= errors.clave.msg  %> 
+                        </div> 
+                    <% } %>
+                    <div class="errorContraseña">
+                     
+                    </div>
+
+                <input class="boton-registrarse contraseña2" type="password" placeholder="Repita Contraseña">
+                    <% if (locals.errors && errors.clave ) { %>
+                        <div class="text-danger">
+                            <%= errors.clave.msg  %> 
+                        </div> 
+                <% } %>
+                <div class="errorContraseña1">
+                        
+                </div>
+
+                <input class="boton-login-registrar" type="submit" value="REGISTRARME">     
+
+        </form>
+
+    </div>
+    <%-include ('./partials/cartas-beneficios') %>
+
+</main>
+    <%-include ("./partials/footer")%>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/registroUsuario.js" ></script>
+</body>
+</html>

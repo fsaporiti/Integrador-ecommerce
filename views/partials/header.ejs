@@ -1,0 +1,51 @@
+<header class="main-header fotografia" >
+    <!-- <img src="/images/sillon-amarillo.jpeg" alt="">-->
+    <div class="parte-top">               
+     <div class="primera-linea">
+        <a href="/" class="fraseLogo">
+            <h2><span class="letraLogo">D</span><span class="letraLogo">D</span>eco<span class="letraLogo">H</span>ouse</h2>
+        </a> 
+         <nav class="listado-top">
+             <ul>
+                <% if ((locals.isLogged) && (locals.userLogged.rol == "comun")) { %>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products/">Catálogo</a></li>
+                    <li><a href="/users/carrito">Carrito</a></li>
+                    <li><a href="/users/cerrarsesion">Cerrar Sesión</a></li>
+                <% } %> 
+                <% if ((locals.isLogged) && (locals.userLogged.rol == "superadministrador")) { %>
+                    <!-- <li><a href="/users/profile">Hola <%= locals.userLogged.name %></a></li> -->
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products/">Catálogo</a></li>
+                    <li><a href="/products/create">Crear Producto</a></li>
+                    <li><a href="/users/create">Crear Usuario</a></li>
+                    <li><a href="/users/cerrarsesion">Cerrar Sesión</a></li>
+                <% } %>
+                <% if ((locals.isLogged) && (locals.userLogged.rol == "administrador")) { %>
+                    <!-- <li><a href="/users/profile">Hola <%= locals.userLogged.name %></a></li> -->
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products/">Catálogo</a></li>
+                    <li><a href="/products/create">Crear Producto</a></li>
+                    <li><a href="/users/cerrarsesion">Cerrar Sesión</a></li>
+                <% } %>
+                <% if (!locals.isLogged) { %>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products/">Catálogo</a></li>
+                    <li><a href="/users/login">Iniciar Sesión</a></li>
+                <% } %>
+            </ul>
+         </nav>
+
+         <!-- <nav class="iconos-header-mobile"> -->
+             <ul class="iconos-top-mobile">
+                 <li><i class="fa-solid fa-cart-arrow-down"></i></li>
+                 <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                 <li><i class="fa-solid fa-bars"></i></li>
+             </ul>
+         <!-- </nav> -->
+     </div>
+
+
+ </div>
+ 
+</header>

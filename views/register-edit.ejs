@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ("./partials/head")%>
+<body>
+    <%-include ("./partials/header")%>
+
+<main class="main-login-registrarse">
+    <div class="div-formularios-monitor">    
+        <form action="/users/login/register-edit/?_method=PUT" method="POST" class="formulario-registrarse">
+            <h2>Edita tu cuenta. </h2>
+            <p>Completa los datos para actualizarlos</p>
+            <input class="boton-registrarse" type="text" value="<%= usuario.nombre %>" name="nombre">
+            <input class="boton-registrarse" type="text" value="<%= usuario.apellido %>" name="apellido">
+            <input class="boton-registrarse" type="email" value="<%= usuario.email %>" name="email">
+            <input class="boton-registrarse" type="password" name="clave" placeholder="Si usted desea, puede cambiar su Password">
+            <!--<input class="boton-registrarse" type="password" name="clave" value="Repita Contraseña" required>-->
+           <input class="boton-login-registrar" type="submit" value="Guardar Cambios">
+            
+        </form>
+
+
+    </div>
+    <%-include ('./partials/cartas-beneficios') %>
+
+</main>
+    <%-include ("./partials/footer")%>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ("./partials/head")%>
+<body>
+    <%-include ("./partials/header")%>
+
+    <main class="main-main">
+        <div class="div-detail-1">
+            
+            <div id="contenedorCarrito">
+                    <!-- <div class="botones-productos">
+                    <a href="#" class="button-edit-product">
+                        <button type="submit" class="button" id="botonComprar"> Borrar </button>
+                    </a>
+                    </div> -->
+            </div>
+        </div>
+        <div class="botones-productos">
+            <a href="#" class="button-edit-product">
+                <button type="submit" class="button" id="botonEliminarTodo"> Borrar todo </button>
+            </a>
+            <a href="#" class="button-edit-product">
+                <button type="submit" class="button" id="botonComprar"> Comprar </button>
+            </a>
+        </div>
+        
+
+        <%-include ('./partials/cartas-beneficios') %>
+
+    </main>
+
+         <%-include ("./partials/footer")%>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+         <script src="/js/carritoCompras.js" ></script>
+</body>
+</html>
+
+

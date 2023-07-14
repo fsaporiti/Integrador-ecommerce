@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ("./partials/head")%>
+<body>
+    <%-include ("./partials/header")%>
+
+<main class="main-login-registrarse">
+    <div class="data-user"> 
+
+        <h1>Perfil del usuario</h1>
+        <p>Nombre: <%= usuario.nombre %></p>
+        <p>Apellido: <%= usuario.apellido %></p>
+        <p>Email: <%= usuario.email %></p>
+        <br>
+
+        
+            <a href="/users/editar/<%=usuario.id %>" class="button-edit-product" style="text-decoration: none;">
+                <button type="submit" class="button">Editar Usuario</button>
+            </a>
+            <form action="/users/delete/<%=usuario.id %>?_method=DELETE" method="POST" class="formulario-eliminar" style="margin-bottom: 25px">
+                <button type="submit" class="button" id="botonBorrado">Eliminar Usuario</button>
+            </form>
+
+
+    </div>
+        <%-include ('./partials/cartas-beneficios') %>
+</main>
+        <%-include ("./partials/footer")%>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="/js/perfilUsuario.js" ></script>
+</body>
+</html>

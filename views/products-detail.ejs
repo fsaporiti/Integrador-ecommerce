@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ("./partials/head")%>
+<body>
+    <%-include ("./partials/header")%>
+
+    <main class="main-main">
+        <div class="div-detail-1">
+            <div class="div-detail-2" id="imagen-carro">
+                <img src="/images/<%= producto.imagen %>" id="imagenCarro" class="imagenCarrito">
+            </div>
+            <div>
+                    <div class="main-detalle-edit">  
+                        <h3 class="titulo-producto-detail" id="nombreCarrito"><%= producto.nombre %></h3>
+                    </div>
+                    <div>
+                    <div class="descripcion-prod-detail">
+                        <p id="precio-base">$<%=producto.precio%></p>
+                    </div>
+
+                    <div class="botones-productos">
+                        <% if (locals.isLogged) { %>
+                        <a href="/users/carrito" class="button-edit-product">
+                            <button type="submit" class="button" id="botonComprar">Agregar al Carrito</button>
+                        </a>
+                        <% } else { %>
+                        <a href="/users/login" class="button-edit-product">
+                            <button type="submit" class="button">Iniciar Secion</button>
+                        </a>
+                        <% } %>
+                        <% if ((locals.isLogged) && ((locals.userLogged.rol == "administrador") || (locals.userLogged.rol == "superadministrador")) ) { %>
+                        <a href="/products/edit/<%=producto.id %>" class="button-edit-product">
+                            <button type="submit" class="button">Editar Producto</button>
+                        </a>
+                        <form action="/products/delete/<%=producto.id %>?_method=DELETE" method="POST" style="margin-bottom: 25px">
+                            <button type="submit" class="button" >Eliminar</button>
+
+                        </form>
+                        <% } %>
+                    </div>
+                    </div>
+            </div>
+        </div>
+            <div class="comentario-producto">
+                <p><%=producto.descripcion%></p>
+            </div>
+    </main>
+         <%-include ("./partials/footer")%>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+         <script src="/js/carrito.js" ></script>
+</body>
+</html>

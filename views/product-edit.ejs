@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ("./partials/head")%>
+<body>
+    <%-include ("./partials/header")%>
+
+    <div class="contenedor-total-edit">
+        <div class="col-12">
+            <h2>Estás editando: <i><%=producto.nombre %></i></h2>
+        </div>
+    </div>
+    <div class="contenedor-parcial-edit">
+
+        <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="formulario-create" >
+
+            <label for="name" class="form-label">Nombre del producto:</label>
+            <input type="text" id="name" name="nombre" value="<%=producto.nombre %>" placeholder="Ej: Zapatillas Reebok" class="boton-login">
+
+            <label for="price" class="form-label">Precio del producto:</label>
+            <input type="text" id="price" name="precio" value="<%=producto.precio %>" placeholder="Ej: 5678" class="boton-login">
+
+            <label for="description" class="form-label" id="imagen-select">Seleccionar Imagen:</label>
+            <input type="file" name="imagen" class="boton-login-select">
+
+            <!-- <label for="description" class="form-label">Descripción:</label> -->
+            <!-- <textarea name="description" id="description" class="form-input"><%= producto.description %></textarea> -->
+
+            <label class="form-label">Fecha Creacion:</label>
+            <input type="date" name="fecha_creacion" class="boton-login">
+
+            <button type="submit" class="button-edit">Editar producto</button>
+
+        </form>
+
+    </div>
+
+        <%-include ("./partials/footer")%>
+
+</body>
+</html>

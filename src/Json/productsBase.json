@@ -1,0 +1,47 @@
+[
+ {
+  "id": 1,
+  "name": "Espejo Egipto",
+  "price": "12500",
+  "discount": "5",
+  "category": "visited",
+  "description": "Espejo redondo modelo de Egipto 90 x 90. Con un estilo industrial basado en los estilos de Europa Occidente de la decada del 1980 donde se utilizaban para decorar las casas de las familias de clase media.",
+  "image": "espejo.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Silla oficina Paris",
+  "description": "Silla ideal para la oficina - HomeOficce",
+  "price": 14000,
+  "discount": 5,
+  "image": "silla.jpeg",
+  "category": "in-sale"
+ },
+ {
+  "id": 5,
+  "name": "Juego de mesa exterior",
+  "description": "Mesa ideal para el exterior de tu casa y disfrutar del aire libre",
+  "price": "55000",
+  "discount": "10",
+  "image": "mesa-exterior.jpeg",
+  "category": "in-sale"
+ },
+ {
+  "id": 6,
+  "name": "Mesa moderna interior",
+  "description": "Mesa ideal para el interior de tu casa",
+  "price": 20000,
+  "discount": 5,
+  "image": "mesa-4-patas.jpeg",
+  "category": "in-sale"
+ },
+ {
+  "id": 7,
+  "name": "abcv",
+  "description": "abc",
+  "price": "15000",
+  "discount": "10",
+  "category": "in-sale",
+  "image": "1666286849248.jpeg"
+ }
+]

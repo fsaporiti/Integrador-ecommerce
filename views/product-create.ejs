@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ("./partials/head")%>
+<body>
+    <%-include ("./partials/header")%>
+
+    <div class="contenedor-total-edit">
+        <div class="col-12">
+            <h2>Estás creando un nuevo producto.<i></i></h2>
+        </div>
+    </div>
+    <div class="contenedor-parcial-edit">
+
+        <form action="/products/create" method="POST" enctype="multipart/form-data" class="formulario-create">
+        
+            <label for="name" class="form-label">Nombre del producto:</label>
+            <input type="text" id="name" name="nombre" placeholder="Ej: Espejo clasico" 
+                   class="boton-login nombreP"
+                   value="<%= locals.oldData ? oldData.nombre : null %>">
+            <% if (locals.errors && errors.nombre) { %>
+                <div class="texto-rojo">
+                    <%= errors.nombre.msg %> 
+                </div>
+            <% } %>
+            <div class="errorNombreP">
+                        
+            </div>
+
+            <label for="price" class="form-label">Precio del producto:</label>
+            <input type="text" id="price" name="precio" placeholder="Ej: 12000" class="boton-login precio"
+            value="<%= locals.oldData ? oldData.precio : null %>">
+            <% if (locals.errors && errors.precio) { %>
+                <div class="texto-rojo">
+                    <%= errors.precio.msg %> 
+                </div>
+            <% } %>
+            <div class="errorPrecioP">
+                        
+            </div>
+
+            <label class="form-label">Material:</label>
+            <select name="material" class="boton-login" value="<%= locals.oldData ? oldData.material : null %>">
+                <% for(let objeMat of material) { %>
+                    <option value="<%= objeMat.id %>">
+                        <%= objeMat.nombre%>
+                    </option>
+                <% } %>
+            </select>
+            
+
+            <label class="form-label">Color:</label>
+            <select name="color" class="boton-login" value="<%= locals.oldData ? oldData.color : null %>">
+                <% for(let objeCol of color) { %>
+                    <option value="<%= objeCol.id %>">
+                        <%= objeCol.nombre%>
+                    </option>
+                <% } %>
+            </select>
+            
+
+            <label class="form-label">Categoría:</label>
+            <select name="categoria" class="boton-login" value="<%= locals.oldData ? oldData.categoria : null %>">
+                <% for(let objeCat of categorias) { %>
+                    <option value="<%= objeCat.id %>">
+                        <%= objeCat.nombre%>
+                    </option>
+                <% } %>
+            </select>
+         
+
+            <label class="form-label">Elegir usuario:</label>
+            <select name="usuario" class="boton-login" value="<%= locals.oldData ? oldData.usuario : null %>">
+                <% for(let user of usuario) { %>
+                    <option value="<%= user.id %>">
+                        <%= user.email%>
+                    </option>
+                <% } %>
+            </select>
+         
+
+            <label class="form-label">Fecha Creacion:</label>
+            <input type="date" name="fecha_creacion" class="boton-login fecha">
+            <div class="errorFechaP">
+                        
+            </div>
+
+            <label for="description" class="form-label" id="imagen-select">Seleccionar Imagen:</label>
+            
+            
+            <input type="file" name="imagen" class="boton-login-select imagen">
+            <% if (locals.errors && errors.imagen) { %>
+                <div class="texto-rojo">
+                    <%= errors.imagen.msg %> 
+                </div>
+            <% } %>
+            <div class="errorImagenP">
+                        
+            </div>
+
+            <label for="description" class="form-label">Descripción:</label>
+            <textarea name="descripcion" id="descripcion" class="textarea-create descripcion"
+            value="<%= locals.oldData ? oldData.descripcion : null %> " placeholder="Escribir breve descripcion del producto, puede incluir peso y medidas de ser necesario."></textarea>
+            <% if (locals.errors && errors.descripcion) { %>
+                <div class="texto-rojo">
+                    <%= errors.descripcion.msg %> 
+                </div>
+            <% } %>
+            <div class="errorDescripcionP">
+                        
+            </div>
+           
+            <button type="submit" class="button-edit">Guardar producto</button>
+
+
+        </form>
+
+    </div>
+
+        <%-include ("./partials/footer")%>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="/js/newProduct.js"></script>
+
+</body>
+</html>

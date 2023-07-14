@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include ("./partials/head")%>
+<body>
+    <%-include ("./partials/header")%>
+   
+<main style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <h2 class="edit-user-super-admin">Listado de Administradores</h2>
+                <ul style="list-style: decimal;">
+                    <% for( let obj of usuarios) { %>
+                        <% if (obj.rol == "administrador") { %>
+                            <li style="margin: 5px;">
+                                <a href="/users/particular/<%= obj.id %>" style="text-decoration: none;">
+                                    <%= obj.email %> 
+                                </a>
+                            </li>
+                        <% } %>
+                    <% } %>
+                </ul>
+            <h2 class="edit-user-super-admin">Listado de usuarios registrados</h2>
+                <ul style="list-style: decimal;">
+                    <% for( let obj of usuarios) { %>
+                        <% if (obj.rol == "comun") { %>
+                            <li style="margin: 5px;">
+                                <a href="/users/particular/<%= obj.id %>" style="text-decoration: none;">
+                                    <%= obj.email %> 
+                                </a>
+                            </li>
+                        <% } %>
+                    <% } %>
+                </ul>
+
+
+
+
+</main>
+    <%-include ("./partials/footer")%>
+</body>
+</html>
