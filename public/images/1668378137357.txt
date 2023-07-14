@@ -1,5 +1,0 @@
-1. Pulsar la tecla Windows + R (o desde la línea de comandos)
-2. Teclear: eventvwr.msc
-3. [Registros de Windows] > [Aplicación]
-
-Registros de Windows - Aplicaciones/Aplicativos.
