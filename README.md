@@ -8,9 +8,7 @@ Publico Objetivo: "Esta dirigido a cualquier persona que quiera decorar su casa 
 
 Integrantes del grupo:
 
-Soy Facu Saporiti, tengo 30 años. Vivo en Adrogue - Buenos Aires - Zona Sur. Soy papa de Cayetana Saporiti, empleado del Banco Nacion. En mis ratos libres me gusta estar en familia y con amigos. Soy hincha de Racing y muy a menudo voy al Cilindro a verlo.
-
-Soy Santiago Hernández, tengo 26 años. Vivo en Caballito, Capital Federal. Trabajo en el área de ventas de una empresa dedicada a la venta minorista y mayorista de seguridad industrial. Tengo 26 años, en mis ratos libres me gusta jugar al fútbol con amigos y ver series en Netflix.
+Soy Facu Saporiti, tengo 30 años. Vivo en Adrogue - Buenos Aires - Zona Sur. Soy papa de Cayetana Saporiti, empleado del Banco Nacion. En mis ratos libres me gusta estar en familia y con amigos.
 
 Soy Ezequiel Scoffoni, tengo 24 años. Vivo en Parque Avellaneda, Capital Federal. Actualmente trabajo como asesor financiero en un Banco. En mis tiempos libres me gusta juntarme/salir con amigos y familia.
 
